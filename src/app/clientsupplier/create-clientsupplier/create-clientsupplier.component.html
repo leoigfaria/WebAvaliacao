@@ -1,0 +1,24 @@
+<form class="create-client">
+    <mat-card>
+        <h2>Criar relacionamento de cliente com fornecedor</h2>
+        <mat-form-field class="full-width">
+            <mat-label>CPF Cliente</mat-label>
+            <textarea matInput placeholder="Insira o CPF do cliente" [(ngModel)]="request.clientCpf" name="clientCpf"></textarea>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>CNPJ Fornecedor</mat-label>
+            <textarea matInput placeholder="Insira CNPJ do Fornecedor" [(ngModel)]="request.supplierCnpj" name="supplierCnpj"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+    </mat-card>
+    <br><br>
+
+    <mat-card *ngIf="response">
+        <div>
+            <h3>Relacionamento criado com sucesso!</h3>
+            <label>Id: {{response.id}}</label><br>
+            <label>Id Cliente: {{response.clientId}}</label><br>
+            <label>Id Fornecedor: {{response.supplierId}}</label><br>
+        </div>
+    </mat-card>
+</form>

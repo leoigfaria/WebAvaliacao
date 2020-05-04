@@ -1,0 +1,30 @@
+<form class="create-supplier">
+    <mat-card>
+        <h2>Criar Fornecedor</h2>
+        <mat-form-field class="full-width">
+            <mat-label>Nome</mat-label>
+            <textarea matInput placeholder="Insira o nome" [(ngModel)]="request.name" name="name"></textarea>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>CNPJ</mat-label>
+            <textarea matInput placeholder="Insira o CNPJ" [(ngModel)]="request.cnpj" name="cnpj"></textarea>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>CEP</mat-label>
+            <textarea matInput placeholder="Insira o CEP" [(ngModel)]="request.cep" name="cep"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+    </mat-card>
+    <br><br>
+
+    <mat-card *ngIf="response">
+        <div>
+            <h3>Cliente criado com sucesso!</h3>
+            <mat-label>Id: {{response.id}}</mat-label><br>
+            <mat-label>Nome: {{response.name}}</mat-label><br>
+            <mat-label>CNPJ: {{response.cnpj}}</mat-label><br>
+            <mat-label>CEP: {{response.cep}}</mat-label><br>
+            <mat-label>Data de Criação: {{response.creationDate}}</mat-label>
+        </div>
+    </mat-card>
+</form>

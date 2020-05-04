@@ -1,0 +1,19 @@
+<form class="update-supplier">
+    <mat-card *ngIf="request">
+        <h2>Atualizar Fornecedor</h2>
+        <mat-form-field class="full-width">
+            <mat-label>Nome:</mat-label>
+            <input matInput placeholder="Insira o nome" [(ngModel)]="request.name" name="name">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>CNPJ:</mat-label>
+            <input matInput placeholder="Insira o CNPJ" [(ngModel)]="request.cnpj" name="cnpj">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>CEP:</mat-label>
+            <input matInput placeholder="Insira o CEP" [(ngModel)]="request.cep" name="cep">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="update()">Atualizar</button>
+        <button mat-raised-button color="secundary" (click)="cancel()">Cancelar</button>
+    </mat-card>
+</form>

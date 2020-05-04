@@ -1,0 +1,30 @@
+<form class="clientsupplier">
+    <h1 class="clientsupplier">Relacionamento Cliente Fornecedor</h1>
+    <table mat-table [dataSource]="responseClientSuppliers" class="mat-elevation-z8" *ngIf="responseClientSuppliers">
+        <ng-container matColumnDef="clientName">
+            <th mat-header-cell *matHeaderCellDef> Nome Cliente </th>
+            <td mat-cell *matCellDef="let responseClientSuppliers"> {{responseClientSuppliers.clientName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="clientCpf">
+            <th mat-header-cell *matHeaderCellDef> CPF CLiente </th>
+            <td mat-cell *matCellDef="let responseClientSuppliers"> {{responseClientSuppliers.clientCpf}} </td>
+        </ng-container>
+        <ng-container matColumnDef="supplierName">
+            <th mat-header-cell *matHeaderCellDef> Nome Fornecedor </th>
+            <td mat-cell *matCellDef="let responseClientSuppliers"> {{responseClientSuppliers.supplierName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="supplierCnpj">
+            <th mat-header-cell *matHeaderCellDef> CNPJ Fornecedor </th>
+            <td mat-cell *matCellDef="let responseClientSuppliers"> {{responseClientSuppliers.supplierCnpj}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let responseClientSuppliers">
+                <a routerLink="/clientsupplier/delete/{{responseClientSuppliers.id}}">Excluir</a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</form>

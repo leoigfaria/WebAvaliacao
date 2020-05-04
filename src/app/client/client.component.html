@@ -1,0 +1,31 @@
+<form class="client">
+    <h1 class="client">Clientes</h1>
+    <table mat-table [dataSource]="responseClients" class="mat-elevation-z8" *ngIf="responseClients">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let responseClients"> {{responseClients.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cpf">
+            <th mat-header-cell *matHeaderCellDef> CPF </th>
+            <td mat-cell *matCellDef="let responseClients"> {{responseClients.cpf}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cep">
+            <th mat-header-cell *matHeaderCellDef> CEP </th>
+            <td mat-cell *matCellDef="let responseClients"> {{responseClients.cep}} </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Data de Criação </th>
+            <td mat-cell *matCellDef="let responseClients"> {{responseClients.creationDate}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let responseClients">
+                <a routerLink="/client/update/{{responseClients.id}}">Editar</a> |
+                <a routerLink="/client/delete/{{responseClients.id}}">Excluir</a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</form>

@@ -1,0 +1,31 @@
+<form class="supplier">
+    <h1 class="supplier">Fornecedores</h1>
+    <table mat-table [dataSource]="responseSuppliers" class="mat-elevation-z8" *ngIf="responseSuppliers">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let responseSuppliers"> {{responseSuppliers.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cnpj">
+            <th mat-header-cell *matHeaderCellDef> CPF </th>
+            <td mat-cell *matCellDef="let responseSuppliers"> {{responseSuppliers.cnpj}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cep">
+            <th mat-header-cell *matHeaderCellDef> CEP </th>
+            <td mat-cell *matCellDef="let responseSuppliers"> {{responseSuppliers.cep}} </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Data de Criação </th>
+            <td mat-cell *matCellDef="let responseSuppliers"> {{responseSuppliers.creationDate}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let responseSuppliers">
+                <a routerLink="/supplier/update/{{responseSuppliers.id}}">Editar</a> |
+                <a routerLink="/supplier/delete/{{responseSuppliers.id}}">Excluir</a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</form>

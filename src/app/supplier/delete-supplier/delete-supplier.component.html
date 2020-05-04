@@ -1,0 +1,22 @@
+<form class="delete-supplier">
+    <mat-card *ngIf="supplier">
+        <h2>Confirma a remoção deste fornecedor?</h2>
+        <mat-form-field class="full-width">
+            <mat-label>Nome:</mat-label>
+            <input matInput placeholder="Insira o nome" [(ngModel)]="supplier.name" name="name" readonly=“true”>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>CNPJ:</mat-label>
+            <input matInput placeholder="Insira o CNPJ" [(ngModel)]="supplier.cnpj" name="cnpj" readonly=“true”>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>CEP:</mat-label>
+            <input matInput placeholder="Insira o CEP" [(ngModel)]="supplier.cep" name="cep" readonly=“true”>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="delete()">Confirmar</button>
+        <button mat-raised-button color="secundary" (click)="cancel()">Cancelar</button>
+    </mat-card>
+</form>

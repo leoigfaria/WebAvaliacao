@@ -1,0 +1,22 @@
+<form class="delete-client">
+    <mat-card *ngIf="client">
+        <h2>Confirma a remoção deste cliente?</h2>
+        <mat-form-field class="full-width">
+            <mat-label>Nome:</mat-label>
+            <input matInput placeholder="Insira o nome" [(ngModel)]="client.name" name="name" readonly=“true”>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>CPF:</mat-label>
+            <input matInput placeholder="Insira o CPF" [(ngModel)]="client.cpf" name="cpf" readonly=“true”>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>CEP:</mat-label>
+            <input matInput placeholder="Insira o CEP" [(ngModel)]="client.cep" name="cep" readonly=“true”>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="delete()">Confirmar</button>
+        <button mat-raised-button color="secundary" (click)="cancel()">Cancelar</button>
+    </mat-card>
+</form>
